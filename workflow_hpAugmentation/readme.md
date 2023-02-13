@@ -16,19 +16,20 @@ Finally, (iii) in the third step, the predprin tool is used in the test mode to 
 The figure below illustrates the steps of this workflow.
 
 <div style="text-align: center">
-	<img src="workflow.png" alt="pipeline" title="PredPrIn" width="680px" />
+	<img src="reduced_workflow.png" alt="pipeline" title="PredPrIn" width="680px" />
 </div>
 
 ## Requirements:
 * Edit the configuration file (config.yaml) according to your own data, filling out the following fields:
 	- base_data: location of the organism folders directory, example: /home/user/data/genomes 
 	- parameters_file: Since this workflow may perform parallel processing of multiple organisms at the same time, you must prepate a tabulated file containng the genome folder names located in base data, where the hpidb files are located. Example: /home/user/data/params.tsv. It must have the following columns: genome (folder name), hpidb_seed_network (the result exported by one of the search methods available in hpidb database), hpidb_search_method (the type of search used to generate the results) and target_taxon (the target taxon id). The column hpidb_source may have two values: keyword or homology. In the keyword mode, you provide a taxonomy, protein name, publication id or detection method and you save all results (mitab.zip) in the genome folder. Finally, in the homology mode allows the user to search for host pathogen ppis giving as input fasta sequences of a set of proteins of the target pathgen for enrichment (so you have to select the search for a pathogen set) and you save the zip folder results (interaction data) in the genome folder. This option is extremely useful when you are not sure that your organism has validated protein interactions, then it finds validated interactions from the closest proteins in the database. In case of using the homology mode, the identifiers of the pathogens' query fasta sequences must be a Uniprot ID. All the query protein IDs must belong to the same target organism (taxon id).
+	- model_file: path of a previously trained model in joblib format (if you want to train from the known validated PPIs given as seeds, just put a 'None' value)
 
 ## Usage Instructions
 The steps below consider the creation of a sqlite database file with all he tasks events which can be used after to retrieve the execution time taken by the tasks. It is possible run locally too (see luigi's documentation to change the running command). <br ><br>
 * Preparation:
-	1. ````git clone https://github.com/YasCoMa/hpdiscovery.git````
-	2. ````cd hpdiscovery````
+	1. ````git clone https://github.com/YasCoMa/hppidiscovery.git````
+	2. ````cd hppidiscovery````
 	3. ````mkdir luigi_log```` 
 	4. ````luigid --background --logdir luigi_log```` (start luigi server)
 	5. conda env create -f hp_ppi_augmentation.yml
@@ -36,10 +37,20 @@ The steps below consider the creation of a sqlite database file with all he task
 	6.1. (execute ````pip3 install wget```` (it is not installed in the environment))
 	7. run ````pwd```` command and get the full path
 	8. Substitute <path> in config_example.yaml with the full path obtained in the previous step
-	9. ````cd workflow_hpAugmentation````
-	10. snake -n (check the plan of jobs, it should return no errors and exceptions)
-	11. snakemake -j 4 (change this number according the number of genomes to analyse and the amount of cores available in your machine)
+	9. Download SPRINT pre-computed similarities in https://www.csd.uwo.ca/~ilie/SPRINT/precomputed_similarities.zip and unzip it inside workflow_hpAugmentation/predprin/core/sprint/HSP/
+	10. ````cd workflow_hpAugmentation/predprin/````
+	11. Uncompress annotation_data.zip
+	12. Uncompress sequence_data.zip
+	13. ````cd ../../````
+	14. ````cd workflow_hpAugmentation````
+	15. snake -n (check the plan of jobs, it should return no errors and exceptions)
+	16. snakemake -j 4 (change this number according the number of genomes to analyse and the amount of cores available in your machine)
 	
 ### Exporting conda environment dependencies
 conda env export > hp_ppi_augmentation.yml
 
+## Reference
+
+
+## Bug Report
+Please, use the [Issues](https://github.com/YasCoMa/hppidiscovery/issues) tab to report any bug.
