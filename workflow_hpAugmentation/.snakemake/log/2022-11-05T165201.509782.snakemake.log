@@ -1,0 +1,28 @@
+Building DAG of jobs...
+MissingInputException in rule step3  in line 72 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
+Missing input files for rule step3:
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/test.txt
+    affected files:
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesstaphylococcus_aureus_subsp._aureus_n315/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesleishmania_major_friedlin/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesmycoplasma_bovis_pg45/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesplasmodium_vivax_salvador_i/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesmycobacterium_tuberculosis_h37rv/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesklebsiella_pneumoniae_kp13/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesshigella_dysenteriae_sd197/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomeshelicobacter_pylori_26695/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomestoxoplasma_gondii_me49/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesleishmania_infantum/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomestrypanosoma_cruzi_cl_brener/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomeswolbachia_endosymbiont_trs_of_brugia_malayi/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesbartonella_bacilliformis/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesmycobacterium_leprae_br4923/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesschistosoma_mansoni_puerto_rico/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomestrichoderma_atroviride/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomestrypanosoma_brucei_dal972/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesmycoplasma_hominis_atcc_23114/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesmycoplasma_gallisepticum/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomespseudomonas_extremaustralis_14-3_substr._14-3b/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomeslisteria_monocytogenes_egd-e/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesachromobacter_xylosoxidans/da_step2.txt
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomesachromobacter_insuavis_axx-a/da_step2.txt

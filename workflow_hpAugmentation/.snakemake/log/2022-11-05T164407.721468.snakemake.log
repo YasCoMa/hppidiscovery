@@ -1,0 +1,31 @@
+Building DAG of jobs...
+MissingInputException in rule step1  in line 34 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
+Missing input files for rule step1:
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/0/da_step1.txt
+    wildcards: genome=0
+    affected files:
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/7/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/10/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/22/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/1/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/11/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/6/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/24/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/2/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/19/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/15/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/4/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/13/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/0/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/21/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/9/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/3/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/14/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/5/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/17/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/16/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/18/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/12/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/8/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/23/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/20/results.zip

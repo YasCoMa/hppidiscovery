@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule step1  in line 34 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
+Missing input files for rule step1:
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/listeria_monocytogenes_egd-e/da_step1.txt
+    wildcards: genome=listeria_monocytogenes_egd-e
+    affected files:
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/helicobacter_pylori_india7/results.zip
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/meloidogyne_incognita/results.zip

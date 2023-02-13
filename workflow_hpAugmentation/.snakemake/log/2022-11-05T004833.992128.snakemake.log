@@ -1,0 +1,29 @@
+Building DAG of jobs...
+MissingInputException in rule all  in line 33 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
+Missing input files for rule all:
+    affected files:
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/shigella_dysenteriae_sd197/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/mycobacterium_leprae_br4923/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/wolbachia_endosymbiont_trs_of_brugia_malayi/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/mycobacterium_tuberculosis_h37rv/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/leishmania_infantum/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/leishmania_major_friedlin/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/toxoplasma_gondii_me49/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/staphylococcus_aureus_subsp._aureus_n315/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/trypanosoma_cruzi_cl_brener/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/helicobacter_pylori_26695/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/listeria_monocytogenes_egd-e/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/mycoplasma_hominis_atcc_23114/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/achromobacter_xylosoxidans/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/mycoplasma_gallisepticum/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/trypanosoma_brucei_dal972/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/pseudomonas_extremaustralis_14-3_substr._14-3b/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/meloidogyne_incognita/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/trichoderma_atroviride/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/helicobacter_pylori_india7/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/klebsiella_pneumoniae_kp13/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/mycoplasma_bovis_pg45/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/bartonella_bacilliformis/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/achromobacter_insuavis_axx-a/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/schistosoma_mansoni_puerto_rico/summary_nodes_edges_enrichment.png
+        /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/genomes/plasmodium_vivax_salvador_i/summary_nodes_edges_enrichment.png

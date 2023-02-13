@@ -1,0 +1,4 @@
+base_data: "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/repo_augmentation/input_example"
+parameters_file: "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/repo_augmentation/workflow_hpAugmentation/params_example.tsv"
+model_file: "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/repo_augmentation/input_example/model_trained.joblib"
+

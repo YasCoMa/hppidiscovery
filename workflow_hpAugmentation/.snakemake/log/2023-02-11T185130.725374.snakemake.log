@@ -1,0 +1,46 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                count    min threads    max threads
+-------------------------------  -------  -------------  -------------
+all                                    1              1              1
+data_acquisition_step1                 1              1              1
+data_acquisition_step2                 1              1              1
+data_acquisition_step3                 1              1              1
+evaluation_visualization_step1         1              1              1
+evaluation_visualization_step2         1              1              1
+evaluation_visualization_step3         1              1              1
+evaluation_visualization_step4         1              1              1
+evaluation_visualization_step5         1              1              1
+training_ppi_augmentation_step1        1              1              1
+training_ppi_augmentation_step2        1              1              1
+training_ppi_augmentation_step3        1              1              1
+total                                 12              1              1
+
+Select jobs to execute...
+
+[Sat Feb 11 18:51:33 2023]
+rule data_acquisition_step1:
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step1.txt
+    jobid: 11
+    reason: Missing output files: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step1.txt
+    resources: tmpdir=/tmp
+
+[Sat Feb 11 19:23:57 2023]
+Finished job 11.
+1 of 12 steps (8%) done
+Select jobs to execute...
+
+[Sat Feb 11 19:23:57 2023]
+rule data_acquisition_step2:
+    input: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step1.txt
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step2.txt
+    jobid: 10
+    reason: Missing output files: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step2.txt; Input files updated by another job: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step1.txt
+    resources: tmpdir=/tmp
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-11T185130.725374.snakemake.log

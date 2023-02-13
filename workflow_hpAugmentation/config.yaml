@@ -1,0 +1,4 @@
+base_data: "/home/yasmmin/ppi_augmentation/input_bioinfoAdv"
+parameters_file: "/home/yasmmin/ppi_augmentation/input_bioinfoAdv/params_augmentation.tsv"
+model_file: "none"
+

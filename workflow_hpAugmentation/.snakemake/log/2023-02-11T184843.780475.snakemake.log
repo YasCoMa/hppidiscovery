@@ -1,0 +1,4 @@
+ModuleNotFoundError in line 8 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/workflow_hpAugmentation/Snakefile:
+No module named 'wget'
+  File "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/workflow_hpAugmentation/Snakefile", line 8, in <module>
+  File "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/workflow_hpAugmentation/data_preprocessing.py", line 3, in <module>

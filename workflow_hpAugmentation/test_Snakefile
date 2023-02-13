@@ -1,0 +1,92 @@
+from snakemake.utils import Paramspace
+
+import os
+import datetime
+
+import pandas as pd
+
+def get_list_input_files(parameters_df):
+    info={}
+    for i in range(len(parameters_df)): 
+        info[config['base_data']+parameters_df.iloc[i,0]] = list(parameters_df.iloc[0, 1:])
+    return info   
+
+configfile: "config.yaml"
+parameters_df = pd.read_csv( config['parameters_file'], sep="\t")
+
+input_files=get_list_input_files(parameters_df)
+
+rule all:
+    input:
+        # Aggregate over entire parameter space (or a subset thereof if needed)
+        # of course, something like this can happen anywhere in the workflow (not
+        # only at the end).
+        expand( "{genome}/test.txt", genome=input_files.keys() ),
+        config['base_data']+"final.txt"
+
+rule step1:
+    output:
+        f"{{genome}}/da_step1.txt"
+    params:
+        genome=lambda wildcards: wildcards.genome,
+        instance=lambda wildcards: input_files[wildcards.genome]
+    run:
+        working_dir=config['base_data']+'/'+params.genome+"/"
+        genome=params.genome
+        net=instance[0]
+        method=instance[1]
+        target_taxon=instance[2]
+            
+        print('step1')
+            
+        os.system(f"touch {genome}/da_step1.txt")
+ 
+rule step2:
+    input:
+        f"{{genome}}/da_step1.txt"
+    output:
+        f"{{genome}}/da_step2.txt"
+    params:
+        genome=lambda wildcards: wildcards.genome,
+        instance=lambda wildcards: input_files[wildcards.genome]
+    run:
+        working_dir=config['base_data']+'/'+params.genome+"/"
+        genome=params.genome
+        net=instance[0]
+        method=instance[1]
+        target_taxon=instance[2]
+            
+        print('step2')
+            
+        #os.system(f"mkdir {genome}")
+        os.system(f"touch {genome}/da_step2.txt") 
+        
+rule step3:
+    input:
+        f"{{genome}}/da_step2.txt"
+    output:
+        f"{{genome}}/test.txt"
+    run:    
+        print('step3')
+            
+        os.system(f"touch {genome}/test.txt")
+        
+rule step4:
+    input:
+        ["{genome}/test.txt".format(genome=dataset) for dataset in input_files.keys()]
+    output:
+        config['base_data']+"test.txt"
+    run:    
+        print('step3')
+            
+        os.system(f"touch {config['base_data']}/test.txt")
+        
+rule step5:
+    input:
+        config['base_data']+"test.txt"
+    output:
+        config['base_data']+"final.txt"
+    run:    
+        print('step3')
+            
+        os.system(f"touch {config['base_data']}/final.txt")

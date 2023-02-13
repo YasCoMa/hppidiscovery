@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                count    min threads    max threads
+-------------------------------  -------  -------------  -------------
+all                                    1              1              1
+evaluation_visualization_step1         1              1              1
+evaluation_visualization_step2         1              1              1
+evaluation_visualization_step3         1              1              1
+evaluation_visualization_step4         1              1              1
+evaluation_visualization_step5         1              1              1
+training_ppi_augmentation_step1        1              1              1
+training_ppi_augmentation_step2        1              1              1
+training_ppi_augmentation_step3        1              1              1
+total                                  9              1              1
+
+Select jobs to execute...
+
+[Sun Feb 12 12:21:05 2023]
+rule training_ppi_augmentation_step1:
+    input: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/da_step3.txt
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/tpa_step1.txt
+    jobid: 8
+    reason: Missing output files: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/tpa_step1.txt
+    resources: tmpdir=/tmp
+
+[Sun Feb 12 12:21:07 2023]
+Finished job 8.
+1 of 9 steps (11%) done
+Select jobs to execute...
+
+[Sun Feb 12 12:21:07 2023]
+rule training_ppi_augmentation_step2:
+    input: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/tpa_step1.txt
+    output: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/tpa_step2.txt
+    jobid: 7
+    reason: Missing output files: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/tpa_step2.txt; Input files updated by another job: /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/portfolio/bioinformatics_advances/review_2023/input_bioinfoAdv/tpa_step1.txt
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

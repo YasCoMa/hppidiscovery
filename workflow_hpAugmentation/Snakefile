@@ -1,0 +1,281 @@
+from snakemake.utils import Paramspace
+
+import os
+import datetime
+
+import pandas as pd
+
+from data_preprocessing import DataPreprocessing
+from training_ppi_augmentation import HPNetworkAugmentation
+from evaluation_visualization import EvaluationResultsExportation
+
+def get_list_input_files(parameters_df):
+    info={}
+    for i in range(len(parameters_df)): 
+        info[config['base_data']+'/'+parameters_df.iloc[i,0]] = list(parameters_df.iloc[i, :])
+    return info   
+
+#configfile: "config_laptop.yaml"
+configfile: "config_example.yaml"
+parameters_df = pd.read_csv( config['parameters_file'], sep="\t")
+input_files=get_list_input_files(parameters_df)
+
+rule all:
+    input:
+        #expand( "{genome}/da_step3.txt", genome=input_files.keys() ),
+        config['base_data']+"/ev_step5.txt"
+
+rule data_acquisition_step1:
+    output:
+        config['base_data']+"/da_step1.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+        
+        before = datetime.datetime.now()
+        obj=DataPreprocessing( )
+        obj.parse_hpidb_results_batch(working_dir, params.genome_data)
+        after = datetime.datetime.now()  
+          
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('data_acquisition_step1', formatted) )
+            
+        os.system(f"touch {working_dir}da_step1.txt")
+
+rule data_acquisition_step2:
+    input:
+        config['base_data']+"/da_step1.txt"
+    output:
+        config['base_data']+"/da_step2.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+        
+        before = datetime.datetime.now()
+        obj=DataPreprocessing()
+        obj.prepare_protein_annotations_data_batch(working_dir, params.genome_data)
+        after = datetime.datetime.now()  
+          
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('data_acquisition_step1', formatted) )
+            
+        os.system(f"touch {working_dir}da_step2.txt")
+        
+rule data_acquisition_step3:
+    input:
+        config['base_data']+"/da_step2.txt"
+    output:
+        config['base_data']+"/da_step3.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+        
+        before = datetime.datetime.now()
+        obj=DataPreprocessing( )
+        obj.handle_singleOrganism_interactions_string_mapping()
+        after = datetime.datetime.now()  
+          
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('data_acquisition_step3', formatted) )
+            
+        os.system(f"touch {working_dir}da_step3.txt")
+        
+rule training_ppi_augmentation_step1:
+    input:
+        config['base_data']+"/da_step3.txt"
+    output:
+        config['base_data']+"/tpa_step1.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+        
+        before = datetime.datetime.now()
+        if( os.path.isfile(config['model_file']) ):
+            os.system('mkdir '+working_dir+'training_data/')
+            os.system('cp '+config['model_file']+' '+working_dir+'training_data/model_trained.joblib')
+        else:
+            obj=HPNetworkAugmentation()
+            obj.prepare_training_data(working_dir, params.genome_data)
+        after = datetime.datetime.now()    
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('training_ppi_augmentation_step1', formatted) )
+            
+        os.system(f"touch {working_dir}tpa_step1.txt")
+        
+rule training_ppi_augmentation_step2:
+    input:
+        config['base_data']+"/tpa_step1.txt"
+    output:
+        config['base_data']+"/tpa_step2.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        obj=HPNetworkAugmentation( )
+        obj.prepare_new_ppis(working_dir, params.genome_data)
+        after = datetime.datetime.now()    
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('training_ppi_augmentation_step2', formatted) )
+            
+        os.system(f"touch {working_dir}tpa_step2.txt")
+        
+rule training_ppi_augmentation_step3:
+    input:
+        config['base_data']+"/tpa_step2.txt"
+    output:
+        config['base_data']+"/tpa_step3.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        if( not os.path.isfile(config['model_file']) ):
+            obj=HPNetworkAugmentation( )
+            obj.execute_training(working_dir)
+        after = datetime.datetime.now()    
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('training_ppi_augmentation_step3', formatted) )
+            
+        os.system(f"touch {working_dir}tpa_step3.txt")
+        
+rule evaluation_visualization_step1:
+    input:
+        config['base_data']+"/tpa_step3.txt"
+    output:
+        config['base_data']+"/ev_step1.txt"
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        obj=EvaluationResultsExportation( )
+        obj.execute_new_ppis_prediction(working_dir)
+        after = datetime.datetime.now()
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('evaluation_visualization_step1', formatted) )
+            
+        os.system(f"touch {working_dir}ev_step1.txt")
+        
+rule evaluation_visualization_step2:
+    input:
+        config['base_data']+"/ev_step1.txt"
+    output:
+        config['base_data']+"/ev_step2.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        obj=EvaluationResultsExportation( )
+        obj.merge_network(working_dir, params.genome_data)
+        after = datetime.datetime.now()
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('evaluation_visualization_step2', formatted) )
+            
+        os.system(f"touch {working_dir}ev_step2.txt")
+        
+rule evaluation_visualization_step3:
+    input:
+        config['base_data']+"/ev_step2.txt"
+    output:
+        config['base_data']+"/ev_step3.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        obj=EvaluationResultsExportation( )
+        obj.separate_ppis_virulence_factors(working_dir, params.genome_data)
+        after = datetime.datetime.now()
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('evaluation_visualization_step3', formatted) )
+            
+        os.system(f"touch {working_dir}ev_step3.txt")
+        
+rule evaluation_visualization_step4:
+    input:
+        config['base_data']+"/ev_step3.txt"
+    output:
+        config['base_data']+"/ev_step4.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        obj=EvaluationResultsExportation( )
+        obj.separate_ppis_drug_targets(working_dir, params.genome_data)
+        after = datetime.datetime.now()
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('evaluation_visualization_step4', formatted) )
+            
+        os.system(f"touch {working_dir}ev_step4.txt")
+        
+rule evaluation_visualization_step5:
+    input:
+        config['base_data']+"/ev_step4.txt"
+    output:
+        config['base_data']+"/ev_step5.txt"
+    params:
+        genome_data=pd.read_csv( config['parameters_file'], sep="\t")
+    run:
+        working_dir=config['base_data']+'/'
+            
+        before = datetime.datetime.now()
+        obj=EvaluationResultsExportation( )
+        obj.generate_enrichment_plots(working_dir, params.genome_data)
+        after = datetime.datetime.now()
+        
+        delta = after-before    
+        formatted=str(datetime.timedelta(seconds=delta.seconds))
+        with open( working_dir+"/log_execution_time.tsv","a") as f:
+            f.write("%s\t%s\n" %('evaluation_visualization_step5', formatted) )
+        
+        """
+        columns=params.genome_data.columns    
+        for i in range(len(params.genome_data)):
+            elements=[]
+            j=0
+            for c in params.genome_data.iloc[i, :]:
+                elements.append(columns[i]+'~'+c)
+                j+=1
+            folder='/'.join(elements)
+            os.system(f"touch {folder}/analysis_finished.txt")
+        """
+        os.system(f"touch {working_dir}ev_step5.txt")
+                

@@ -1,0 +1,3 @@
+WorkflowError in line 34 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
+Flags in file patterns given to expand() are invalid. Flags (e.g. temp(), directory()) have to be applied outside of expand (e.g. 'temp(expand("plots/{sample}.pdf", sample=SAMPLES))').
+  File "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile", line 34, in <module>

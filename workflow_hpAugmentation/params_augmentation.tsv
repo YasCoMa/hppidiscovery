@@ -1,0 +1,5 @@
+genome	hpidb_seed_network	hpidb_search_method	target_taxon
+e_coli	results.zip	homology_search	83333
+s_aureus	results.zip	homology_search	1280
+m_tuberculosis	results.zip	homology_search	83332
+p_aeruginosa	results.zip	homology_search	287
