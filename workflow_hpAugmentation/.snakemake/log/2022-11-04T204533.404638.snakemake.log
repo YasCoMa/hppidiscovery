@@ -1,3 +1,0 @@
-SyntaxError in line 169 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/training_ppi_augmentation.py:
-EOL while scanning string literal (training_ppi_augmentation.py, line 169)
-  File "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile", line 9, in <module>

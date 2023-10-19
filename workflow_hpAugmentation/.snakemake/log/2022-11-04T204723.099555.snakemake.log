@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all  in line 21 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
-Missing input files for rule all:
-    affected files:
-        {config['base_data']}/ev_step5.txt

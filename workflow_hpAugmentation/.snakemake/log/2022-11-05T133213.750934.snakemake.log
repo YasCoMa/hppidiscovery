@@ -1,2 +1,0 @@
-SyntaxError in line 42 of /mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/host-pathogen_network_mining/target_pathogen/workflow_hpAugmentation/Snakefile:
-Unexpected keyword expand in rule definition (Snakefile, line 42)
